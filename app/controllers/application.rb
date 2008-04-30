@@ -3,7 +3,8 @@
 class ApplicationController < ActionController::Base
   include AuthenticatedSystem
   
-  helper_method :textilight, :textilize
+  helper_method :textilight
+  helper_method :textilize
   
   def textilight(text='')
     r = RedCloth.new text

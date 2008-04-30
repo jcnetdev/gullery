@@ -6,7 +6,7 @@ ul :id => 'project_list' do
   render :partial => 'project', :collection => @projects
 end
 
-if @session[:user]
+if session[:user]
   render(:partial => 'project_form')
   in_place_editor "user_description", 
                   :url => capture { account_url(:action => 'update_description') }, 

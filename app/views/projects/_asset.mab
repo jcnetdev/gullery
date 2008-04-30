@@ -1,6 +1,6 @@
 @indent = 0
 li :id => "asset_#{asset.id}" do
-  if @session[:user]
+  if session[:user]
     div.toolbar(:width => Asset.thumbnail_width) do
       span.handle { "drag" }
       span.rotate do 
@@ -13,7 +13,7 @@ li :id => "asset_#{asset.id}" do
   end
   link_to image_tag(asset.web_path(:thumb), :width => Asset.thumbnail_width, :height => Asset.thumbnail_height), asset.web_path, :rel => 'lightbox', :title => capture { textilight(asset.caption) }
   render :partial => 'asset_caption', :locals => {:asset => asset}
-  if @session[:user]
+  if session[:user]
     in_place_editor "asset_caption_#{asset.id}", :url => capture { assets_url(:action => 'update_caption', :id => asset.id) }
   end
 end

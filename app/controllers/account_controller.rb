@@ -1,12 +1,10 @@
 class AccountController < ApplicationController
   include AuthenticatedSystem
 
-  observer :user_observer
-
   before_filter :login_required, :only => [:update_description]
   
   def update_description
-    current_user.description = @params[:value]
+    current_user.description = params[:value]
     if current_user.save
       render :text => textilize(current_user.description)
     end
@@ -50,7 +48,7 @@ class AccountController < ApplicationController
     end
     @user = User.new(params[:user])
     return unless request.post?
-    @user.website = "http://#{@params[:user][:website]}"
+    @user.website = "http://#{params[:user][:website]}"
     if @user.save
       self.current_user = User.authenticate(params[:user][:login], params[:user][:password])
       redirect_back_or_default(:controller => '/')

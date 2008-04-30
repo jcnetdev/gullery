@@ -7,12 +7,11 @@ module ApplicationHelper
   end
 
   def show_page_nav
-    user = User.find_first
+    user = User.find :first
     return 'gullery photo gallery' if user.nil?
     nav = link_to(user.company, :controller => '/')
     nav += ' ' + content_tag(:small, link_to((@project.name), projects_url(:action => 'show', :id => @project))) if @project
     nav
   end
-  
   
 end

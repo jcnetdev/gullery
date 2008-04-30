@@ -7,7 +7,7 @@ ul :id => 'asset_list' do
   render :partial => 'asset', :collection => @project.assets
 end
 
-if @session[:user]
+if session[:user]
   render(:partial => 'asset_form')
   sortable_element  'asset_list', 
                     :url => capture { assets_url(:action => 'sort', :project_id => @project) },

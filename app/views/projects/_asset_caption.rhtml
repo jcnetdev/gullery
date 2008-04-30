@@ -1,3 +1,13 @@
+<%
+# hack. but markaby wont pick our our F*%&ing app helpers. so whatever, this works. 
+# if you can find a better way, then please let me know --jacques
+def textilight(text='')
+  r = RedCloth.new text
+  r.hard_breaks = false
+  r.to_html.gsub(/^<p>/, '').gsub(/<\/p>$/, '')
+end
+%>
+
 <%= 
-content_tag(:span, textilight(asset.caption.blank? ? '&nbsp;' : asset.caption), :id => "asset_caption_#{asset.id}")
+  content_tag(:span, textilight(asset.caption.blank? ? '&nbsp;' : asset.caption), :id => "asset_caption_#{asset.id}")
  %>

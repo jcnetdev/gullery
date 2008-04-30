@@ -69,7 +69,7 @@ class AssetsControllerTest < Test::Unit::TestCase
     old_count = project.assets.length
     post :destroy, :id => 1
     assert_response :success
-    assert_equal 'text/javascript', @response.headers['Content-Type']
+    assert_equal 'text/javascript; charset=utf-8', @response.headers['type']
     
     assert_equal old_count - 1, project.assets.count
   end
