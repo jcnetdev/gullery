@@ -7,3 +7,11 @@ http://nubyonrails.com/pages/gullery
 Forked and updated for Rails 2.0 by RailsJedi.com
 
 http://github.com/jcnetdev/gullery
+
+
+== Requirements
+
+sudo gem install haml
+sudo gem install mini_magick
+
+ImageMagick should be installed on your machine
