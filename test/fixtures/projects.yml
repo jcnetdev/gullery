@@ -1,0 +1,14 @@
+cloneberry_soda:
+  id: 1
+  user_id: 1
+  name: Cloneberry Soda
+  is_visible: t
+  created_at: <%= Time.now - 7.days %>
+  updated_at: <%= Time.now - 1.day %>
+  position: 1
+  description: |
+    Cloneberry Soda is a tasty drink.
+    
+    Full of nutrients and lots of sugar. You''ll feel twice as fit!
+    
+    Visit the "Cloneberry Soda Website":http://cloneberrysoda.com for details.

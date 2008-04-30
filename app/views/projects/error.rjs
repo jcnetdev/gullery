@@ -1,0 +1,2 @@
+page.alert "Sorry! There was an error adding that project."
+page.hide 'loading'

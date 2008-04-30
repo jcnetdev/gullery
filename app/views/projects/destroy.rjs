@@ -1,0 +1,2 @@
+page.remove "project_#{@project.id}"
+page.hide 'loading'

@@ -1,0 +1,50 @@
+closeup:
+  id: 1
+  project_id: 1
+  path: closeup.png
+  caption: A Closeup of the can
+  is_visible: true
+  created_at: <%= Time.now - 101 %>
+  updated_at: <%= Time.now - 100 %>
+  position: 1
+  
+can_label:
+  id: 2
+  project_id: 1
+  path: can_label.png
+  caption: The label
+  is_visible: true
+  created_at: <%= Time.now - 201 %>
+  updated_at: <%= Time.now - 200 %>
+  position: 1
+  
+person_drinking:
+  id: 3
+  project_id: 1
+  path: person_drinking.png
+  caption: Cloneberry soda being enjoyed
+  is_visible: true
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  position: 0
+  
+not_visible:
+  id: 4
+  project_id: 1
+  path: not_visible.png
+  caption: You shouldn''t see this!
+  is_visible: 
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  position: 0
+
+photo:
+  id: 5
+  project_id: 1
+  path: /system/photo.jpg
+  caption: A photo to rotate
+  is_visible: 
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  position: 0
+

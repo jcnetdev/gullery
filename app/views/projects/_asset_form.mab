@@ -1,0 +1,11 @@
+form_tag( { :controller => 'assets', :action => 'create' }, 
+          { :multipart => true, :onsubmit => "Element.show('loading')" } ) 
+  hidden_field :asset, :project_id, :value => @params[:id]
+  self << "Photo: "
+  file_field :asset, :file_field, :size => 10
+  br
+  self << "Caption: "
+  text_field :asset, :caption, :size => 20
+  submit_tag "Save"
+  image_tag 'spinner.gif', :style => 'display: none;', :id => 'loading'
+end_form_tag

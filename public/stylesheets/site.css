@@ -1,0 +1,178 @@
+
+body, p, input, textarea {
+  font-family: "Futura", "Lucida Grande", Verdana, sans-serif;
+}
+
+body {
+  background: #525252 url("/images/bgcolor.gif") fixed repeat-x top left;
+  color: white;
+  margin: 0;
+}
+
+input {
+  color: black;
+}
+
+/******************************
+*  Layout
+******************************/
+
+#container {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 690px;
+  voice-family: "\"}\""; 
+  voice-family:inherit;
+  width: 670px;
+}
+html>body #container {
+  width: 670px;
+} 
+
+#header {
+  background: #3B1E33 url(/images/grad-up.png) repeat-x top left;
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/grad-up.png',sizingMethod='scale');
+}
+
+#content {
+  
+}
+
+#footer {
+  font-size: 0.8em;
+  text-align: center;
+  padding-top: 4em;
+  clear: both;
+}
+
+
+/******************************
+*  HTML Elements
+******************************/
+
+h1 {
+  margin: 0 0 10px 0;
+  padding-bottom: 8px;
+  border-bottom: 4px solid #333;
+  font-weight: normal;
+}
+
+a, a:visited {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: black;
+  background-color: white;
+}
+
+form {
+  display: block;
+  clear: both;
+  text-align: center;
+  padding: 1em;
+}
+
+input {
+  font-size: 1.2em;
+  padding: 0.2em;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+small, small a, small a:visited {
+  color: #cccccc;
+}
+
+div.description {
+  text-align: left;
+}
+
+/******************************
+*  Thumbnails
+******************************/
+
+#project_list, 
+#asset_list {
+  list-style-type: none;
+  margin: 0; padding: 0;
+}
+
+#project_list li, 
+#asset_list li {
+  float: left;
+  padding: 8px;
+  width: 216px;
+  voice-family: "\"}\""; 
+  voice-family:inherit;
+  width: 200px;
+}
+
+#project_list li a img, 
+#project_list li a:visited img, 
+#asset_list li a img, 
+#asset_list li a:visited img {
+  display: block;
+  margin-bottom: 5px;
+  border: 0;
+  border-bottom: 4px solid #3B1E33;
+}
+
+#project_list li a:hover img, 
+#asset_list li a:hover img {
+  background-color: black;
+  border-bottom: 4px solid white;
+}
+
+#project_list li small, 
+#asset_list li small {
+  display: block;
+}
+
+/******************************
+*  Tools
+******************************/
+
+.toolbar { 
+  background-color: #333333;
+  opacity: .6;
+	filter: alpha(opacity=60);
+	padding-left: 10px;
+	text-align: right;
+}
+
+.toolbar span {
+  padding-right: 5px;
+  font-variant: small-caps;
+}
+
+.toolbar span.handle {
+  cursor: move;
+}
+
+/******************************
+*  In Place Editor
+******************************/
+
+.inplaceeditor-form {
+  margin: 0; padding: 0;
+  display: inline;
+  clear: none;
+}
+.inplaceeditor-form input { 
+  font-size: 0.8em;
+  padding: 0.1em;
+  margin: 0;
+}
+.inplaceeditor-form input[type=text] { 
+  width: 100px;
+}
+.inplaceeditor-form textarea { 
+
+}
+.inplaceeditor-form a { 
+  font-size: 0.8em;
+}
+
+

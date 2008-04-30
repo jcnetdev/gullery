@@ -1,0 +1,19 @@
+div(:id => 'user_description', :class => 'description') do
+  textilize(@user.description.blank? ? '&nbsp;' : @user.description)
+end
+
+ul :id => 'project_list' do
+  render :partial => 'project', :collection => @projects
+end
+
+if @session[:user]
+  render(:partial => 'project_form')
+  in_place_editor "user_description", 
+                  :url => capture { account_url(:action => 'update_description') }, 
+                  :rows => 5
+  sortable_element  'project_list', 
+                    :url => capture { projects_url(:action => 'sort') },
+                    :handle => 'handle',
+                    :loading => "Element.show('loading')",
+                    :complete => "Element.hide('loading')"
+end

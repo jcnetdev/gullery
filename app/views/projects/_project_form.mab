@@ -1,0 +1,7 @@
+form_tag( { :controller => 'projects', :action => 'create' }, 
+          { :onsubmit => "Element.show('loading')" } ) 
+  self << "New Project Name: "
+  text_field :project, :name, :size => 20
+  submit_tag "Save"
+  image_tag 'spinner.gif', :style => 'display: none;', :id => 'loading'
+end_form_tag

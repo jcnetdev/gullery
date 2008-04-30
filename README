@@ -1,0 +1,50 @@
+What is it?
+===========
+
+Gullery is a simple photo gallery for showing your portfolio or a small photo gallery.
+
+It is written with Ruby on Rails and is made to use as little memory as possible (for use on shared hosts or limited memory situations). Files are stored on disk and the system can be deployed with Capistrano.
+
+A live version is at http://geoffreygrosenbach.com/
+
+See also "Planned Features" below.
+
+Requirements
+============
+
+Currently you need all of those things to get Gullery to run:
+
+ * Ruby -v of 1.8.2 (25-05-2004) or greater.
+ * A database that is supported by Rails migrations.
+ * Ruby drivers for your database.
+ * For best performance, you should have a web server running either
+   Apache or Lighttpd along with FastCGI, although these aren't
+   strictly required--you can use Ruby's built-in web server for
+   low-volume testing.
+ * ImageMagick's command line tools. Most shared hosts have this.
+
+NOTE: RMagick is not required! A current version of the Rails trunk is included for stability.
+
+Installation
+============
+
+Create a database and customize config/deploy.rb and config/database.yml. Samples are provided.
+
+ * Run 'rake migrate'
+
+To run on a remote server:
+
+ * Run 'rake remote:setup'
+ * Copy your database.yml to 'shared/config/database.yml' on the remote server. This will be copied to the app when it is deployed.
+ * Run 'rake deploy'
+
+In either case:
+
+ * Navigate to 'http://your_site.com/' and you will be asked to pick a name and password.
+
+Planned Features
+============
+
+ * CSS stored in the database for easy customization.
+ * 45˚ thumbnail option
+

@@ -1,0 +1,2 @@
+page.remove "asset_#{@asset.id}"
+page.hide 'loading'

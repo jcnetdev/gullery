@@ -1,0 +1,19 @@
+@indent = 0
+li :id => "asset_#{asset.id}" do
+  if @session[:user]
+    div.toolbar(:width => Asset.thumbnail_width) do
+      span.handle { "drag" }
+      span.rotate do 
+        link_to(' &larr; ', assets_url(:action => 'rotate', :id => asset.id, :direction => 'ccw'), :onclick => "Element.show('loading')")
+        self << "rotate" 
+        link_to(' &rarr; ', assets_url(:action => 'rotate', :id => asset.id, :direction => 'cw'), :onclick => "Element.show('loading')")
+      end
+      span.delete { link_to_remote " delete &#215;", :url => capture { assets_url(:action => 'destroy', :id => asset.id) }, :confirm => "Do you want to delete this photo?" }
+    end
+  end
+  link_to image_tag(asset.web_path(:thumb), :width => Asset.thumbnail_width, :height => Asset.thumbnail_height), asset.web_path, :rel => 'lightbox', :title => capture { textilight(asset.caption) }
+  render :partial => 'asset_caption', :locals => {:asset => asset}
+  if @session[:user]
+    in_place_editor "asset_caption_#{asset.id}", :url => capture { assets_url(:action => 'update_caption', :id => asset.id) }
+  end
+end

@@ -1,0 +1,4 @@
+
+page.insert_html :bottom, 'project_list', :partial => 'project', :locals => {:project => @project}
+page.call 'Form.reset', 'project_form_new'
+page.hide 'loading'
