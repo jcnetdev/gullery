@@ -1,0 +1,15 @@
+.description{:id => 'user_description'}
+  = textilize(@user.description.blank? ? '&nbsp;' : @user.description)
+
+%ul#project_list
+  = render :partial => 'project', :collection => @projects
+
+- if session[:user]
+  = render(:partial => 'project_form') 
+  = in_place_editor "user_description", :url => account_url(:action => 'update_description'), :rows => 5
+  = sortable_element  'project_list', |
+                    :url => projects_url(:action => 'sort'), |
+                    :handle => 'handle', |
+                    :loading => "Element.show('loading')", |
+                    :complete => "Element.hide('loading')" |
+

@@ -1,0 +1,17 @@
+!!! Strict
+
+%html{html_attrs}
+  %head
+    %title= show_page_title
+    = stylesheet_link_tag 'site', 'lightbox'
+    = javascript_include_tag :defaults
+    = javascript_include_tag 'lightbox'
+
+  %body
+    #container       
+      #header
+        %h1= show_page_nav
+
+      #content= @content_for_layout
+
+      #footer= textilize %(powered by "gullery":http://nubyonrails.com/pages/gullery)

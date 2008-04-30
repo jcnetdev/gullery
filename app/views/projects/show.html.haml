@@ -1,0 +1,16 @@
+.description{:id => "project_description_#{@project.id}"}
+  = textilize(@project.description.blank? ? '&nbsp;' : @project.description)
+
+%ul#asset_list
+  = render :partial => 'asset', :collection => @project.assets
+
+- if session[:user]
+  = render :partial => 'asset_form'
+
+  = sortable_element  'asset_list', |
+                    :url => assets_url(:action => 'sort', :project_id => @project), |
+                    :handle => 'handle', |
+                    :loading => "Element.show('loading')", |
+                    :complete => "Element.hide('loading')" |
+
+  = in_place_editor "project_description_#{@project.id}", :url => projects_url(:action => 'update_description', :id => @project), :rows => 5

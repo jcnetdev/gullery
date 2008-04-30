@@ -98,7 +98,7 @@ protected
 
   # move to the last store_location call or to the passed default one
   def redirect_back_or_default(default)
-    session[:return_to] ? redirect_to_url(session[:return_to]) : redirect_to(default)
+    session[:return_to] ? redirect_to(session[:return_to]) : redirect_to(default)
     session[:return_to] = nil
   end
 
