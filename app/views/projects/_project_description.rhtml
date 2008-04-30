@@ -1,3 +1,3 @@
-<%= 
-content_tag(:div, textilize(@project.description.blank? ? '&nbsp;' : @project.description), :id => "project_description_#{@project.id}")
- %>
+<%= content_tag(:div, 
+                  textilize(@project.description.blank? ? '&nbsp;' : @project.description), 
+                  :id => "project_description_#{@project.id}") %>
